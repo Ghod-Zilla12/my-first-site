@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Viewport" content="width=device-width" initial-scale="1.0">
+        <title>Cyber Calc.</title>
+    </head>
+    <style>
+        body { background: #1a0b2e; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .calc { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); width: 300px; }
+        #display { width: 100%; height: 60px; background: none; border: none; color: #00ff88; font-size: 2rem; text-align: right; margin-bottom: 20px; outline: none; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        button { padding: 20px; border-radius: 10px; border: none; background: rgba(255,255,255,0.1); color: white; font-size: 1.2rem; }
+        button:active { background: #00ff88; color: black; }
+        .op { color: #00ff88; font-weight: bold; }
+        .eq { background: #00ff88; color: black; grid-column: span 2; }
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <input type="text" id="display" disabled placeholder="0">
+        <div class="grid">
+            <button onclick="clr()">C</button>
+            <button onclick="del()">«</button>
+            <button class="op" onclick="ins('/')">/</button>
+            <button class="op" onclick="ins('*')">×</button>
+            <button onclick="ins('7')">7</button><button onclick="ins('8')">8</button><button onclick="ins('9')">9</button>
+            <button class="op" onclick="ins('-')">-</button>
+            <button onclick="ins('4')">4</button><button onclick="ins('5')">5</button><button onclick="ins('6')">6</button>
+            <button class="op" onclick="ins('+')">+</button>
+            <button onclick="ins('1')">1</button><button onclick="ins('2')">2</button><button onclick="ins('3')">3</button>
+            <button onclick="ins('.')">.</button>
+            <button onclick="ins('0')">0</button>
+            <button class="eq" onclick="calc()">=</button>
+        </div>
+    </div>
+    <script>
+        let d = document.getElementById('display');
+        function ins(v) { d.value += v; }
+        function clr() { d.value = ''; }
+        function del() { d.value = d.value.slice(0, -1); }
+        function calc() { try { d.value = eval(d.value); } catch { d.value = 'Error'; } }
+    </script>
+</body>
+</html>
+    </style>
+</html>
