@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghod-Zilla12 | Dev Hub</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <style>
-        :root {
+    :root {
             --bg: #1a0b2e;
             --neon: #00ff88;
             --glass: rgba(255, 255, 255, 0.1);
+            --pink: #ff0077;
         }
 
         body {
@@ -21,6 +21,7 @@
             align-items: center;
             padding: 40px 20px;
             margin: 0;
+            min-height; 100vh;
             }
             
         /* Profile Section */
@@ -46,7 +47,7 @@
         }
 
         .link-card {
-        background: var(--glass);
+            background: var(--glass);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 15px;
@@ -56,32 +57,21 @@
             text-align: center;
             font-weight: bold;
             transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .link-card:hover {
-            border-color: var(--neon);
-            background: rgba(0, 255, 136, 0.1);
-            transform: translateY(-3px);
+            box-sizing: border-box; /*Fixed the corner issue*/
         }
 
         .highlight {
             background: var(--neon);
             color: black;
+            box-shadow: 0 0 10px var(--neon);
             } 
             
-            .contact-btn {
-    border-color: #ff0077; /* Neon Pink */
-    color: #ff0077;
-}
-            .contact-btn:hover {
-    background: rgba(255, 0, 119, 0.1);
-    box-shadow: 0 0 10px #ff0077;
-    }
+        .contact-btn {
+            border: 1px solid var(--pink); 
+            color: var (--pink);
+        }
            </style>
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%2300ff88%22 font-family=%22Arial%22 font-weight=%22bold%22>Z</text></svg>">
 </head>
 <body>
 
