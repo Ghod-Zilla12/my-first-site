@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,13 +71,22 @@
             background: var(--neon);
             color: black;
             } 
+            
+            .contact-btn {
+    border-color: #ff0077; /* Neon Pink */
+    color: #ff0077;
+}
+            .contact-btn:hover {
+    background: rgba(255, 0, 119, 0.1);
+    box-shadow: 0 0 10px #ff0077;
+    }
            </style>
 </head>
 <body>
 
     <img src="https://github.com/Ghod-Zilla12.png" alt="Profile" class="profile-pic">
     
-    <h1 id="greeting">Hello!</h1>
+    <h1 id="greeting">Loading...</h1>
     <p>Android Developer | Building in Public 🚀</p>
 
     <div class="links-container">
@@ -86,6 +95,8 @@
         <a href="#" class="link-card">🧮 Calculator App (In Progress)</a>
         
         <a href="https://github.com/Ghod-Zilla12" class="link-card">🐙 Follow my GitHub</a>
+        
+        <a href="mailto: samuelu573@gmail.com" class="link-card contact-btn">📧 contact me</a>
     </div>
 
     <script>
@@ -95,7 +106,7 @@
         
         if (hour < 12) greetingElement.innerText = "Good Morning, World!";
         else if (hour < 18) greetingElement.innerText = "Good Afternoon!";
-        else greetingElement.innerText = "Good EveLoadin
+        else greetingElement.innerText = "Good Evening!";
     </script>
 </body>
-</html>
+    </html>
