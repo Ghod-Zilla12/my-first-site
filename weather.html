@@ -46,14 +46,34 @@
             border: 1px solid var(--neon-blue);
             padding: 10px 20px;
             border-radius: 50px;
+
+        .btn-refresh {
+            background: transparent;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 8px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            margin-top: 10px;
+}
+
+        .btn-refresh:hover {
+            background: var(--neon-blue);
+            color: var(--bg);
+            box-shadow: 0 0 15px var(--neon-blue);
         }
           </style>
       </head>
-      <body>
+      <body>,
            <div class="widget">
         <div class="city" id="location">Detecting Location...</div>
         <div class="temp" id="temp">--°</div>
         <div class="desc" id="description">Loading skies...</div>
+     
+    <button onclick="getLocalWeather()" class="btn-refresh">Update Weather</button>
+    </div>
         
         <div style="font-size: 0.8rem; opacity: 0.5;">Fetching Live Data...</div>
     </div>
