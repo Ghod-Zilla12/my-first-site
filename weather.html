@@ -1,0 +1,63 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast | Cross-Platform Weather</title>
+    <style>
+      :root {
+            --bg: #0f172a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --neon-blue: #38bdf8;
+            }
+            
+       body {
+            background: radial-gradient(circle at top, #1e293b, #0f172a);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+       }
+       
+       .widget {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 30px;
+            width: 85px;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+       }
+        
+        .city { font-size: 1.2rem; opacity: 0.8; letter-spacing: 1px; }
+        .temp { font-size: 5rem; font-weight: bold; margin: 10px 0; color:var(--neon-blue); }
+        .desc { text-tranform: capitalize; font-size: 1.1rem; margin-bottom: 20px; }
+        .btn-bottom {
+            margin-top: 30px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid var(--neon-blue);
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+          </style>
+      </head>
+      <body>
+           <div class="widget">
+        <div class="city" id="location">Detecting Location...</div>
+        <div class="temp" id="temp">--°</div>
+        <div class="desc" id="description">Loading skies...</div>
+        
+        <div style="font-size: 0.8rem; opacity: 0.5;">Fetching Live Data...</div>
+    </div>
+    
+    <a href="index.html" class="btn-back">← Back to Hub</a>
+  </body>
+</html>
