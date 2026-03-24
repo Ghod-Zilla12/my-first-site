@@ -59,35 +59,37 @@
     </div>
     
     <a href="index.html" class="btn-back">← Back to Hub</a>
+          
+           <script src="config.js"></script>
+          
+          <script>
+   // // 2. DELETE the 'const apiKey = ...' line from here! 
+    // It's now being pulled from config.js automatically.
 
-       <script>
-        // 1. The ID Badge
-    const apiKey = 'd0ec407cb31f5bd43caaaefcdae0f066'; 
-
-    // 2. The Instructions (Definition)
     async function getLocalWeather() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(async (position) => {
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;
+                
+                // This URL still works because 'apiKey' is defined in config.js
                 const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-                try {
+                try { 
                     const response = await fetch(url);
                     const data = await response.json();
+                    
                     if (response.ok) {
-                    document.getElementById('temp').innerHTML = Math.round(data.main.temp) + '°';
-                    document.getElementById('location').innerHTML = data.name;
-                    document.getElementById('description').innerHTML = data.weather[0].description;
+                        document.getElementById('temp').innerHTML = Math.round(data.main.temp) + '°';
+                        document.getElementById('location').innerHTML = data.name;
+                        document.getElementById('description').innerHTML = data.weather[0].description;
                     }
-                } catch (e) { console.log(e); }
-                });
-        }
-    }
+                } catch (e) { console.log("Error:", e); }
+            });
+              }
+       }
 
-    // 3. The Execution (The "Call")
-    // This MUST come after the function block above
-    getLocalWeather(); 
+    getLocalWeather();
        </script>
   </body>
 </html>
