@@ -1,0 +1,51 @@
+CSS
+/* GLOBAL SETTINGS */
+:root {
+    --neon-blue: #00d4ff;
+    --bg-dark: #0b0f19;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* APP CONTAINER */
+.todo-container, .app-card, .glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* INPUTS & BUTTONS */
+input {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: white;
+    padding: 12px;
+    outline: none;
+}
+
+.add-btn, .launch-btn {
+    background: var(--neon-blue);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover { transform: scale(1.05); }
