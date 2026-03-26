@@ -26,7 +26,7 @@ A collection of high-performance, mobile-responsive web applications built with 
 
 ### 🌦️ SkyCast Weather
 ![Main View](assets/sky-main.png)
-![Detail View](assets/sky-error.png)
+![Detail View](assets/sky-detail.png)
 ---
 
 ## 🔗 How to Explore
