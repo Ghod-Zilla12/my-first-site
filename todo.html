@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Zilla-Tasks | Cross-Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .todo-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+        }
+        .add-btn {
+            background: #00d4ff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        ul { list-style: none; padding: 0; }
+        li {
+            background: rgba(255, 255, 255, 0.03);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .delete-btn {
+            color: #ff4d4d;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .completed { text-decoration: line-through; opacity: 0.5; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } }
+    </style>
+</head>
+<body>
+
+<div class="todo-container">
+    <h2>🚀 Zilla-Tasks</h2>
+    <div class="input-group">
+        <input type="text" id="todoInput" placeholder="Add a new task...">
+        <button class="add-btn" onclick="addTask()">Add</button>
+    </div>
+    <ul id="todoList"></ul>
+    <a href="index.html" style="color: #00d4ff; text-decoration: none; font-size: 0.8rem;">← Back to Hub</a>
+</div>
+
+<script>
+    const todoInput = document.getElementById('todoInput');
+    const todoList = document.getElementById('todoList');
+
+    // Load tasks from LocalStorage on startup
+    document.addEventListener('DOMContentLoaded', getTodos);
+
+    function addTask() {
+        if (todoInput.value === '') return;
+
+        createTodoElement(todoInput.value);
+        saveLocalTodos(todoInput.value);
+        todoInput.value = '';
+    }
+
+    function createTodoElement(text) {
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${text}</span> <span class="delete-btn" onclick="removeTodo(this)">X</span>`;
+        li.onclick = function(e) {
+            if(e.target.classList.contains('delete-btn')) return;
+            li.classList.toggle('completed');
+        };
+        todoList.appendChild(li);
+    }
+
+    function saveLocalTodos(todo) {
+        let todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
+        todos.push(todo);
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }
+
+    function getTodos() {
+        let todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
+        todos.forEach(todo => createTodoElement(todo));
+    }
+
+    function removeTodo(element) {
+        const text = element.parentElement.firstChild.innerText;
+        element.parentElement.remove();
+        let todos = JSON.parse(localStorage.getItem('todos'));
+        const index = todos.indexOf(text);
+        todos.splice(index, 1);
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }
+</script>
+
+</body>
+</html>
