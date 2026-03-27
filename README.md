@@ -27,6 +27,10 @@ A collection of high-performance, mobile-responsive web applications built with 
 ### 🌦️ SkyCast Weather
 ![Main View](assets/sky-main.png)
 ![Detail View](assets/sky-detail.png)
+
+### 📝 Zilla-Tasks
+![Tasks Main](assets/todo-main.png)
+*Your data stays with you, even after a refresh.*
 ---
 
 ## 🔗 How to Explore
@@ -34,5 +38,15 @@ A collection of high-performance, mobile-responsive web applications built with 
 2.  **Launch the Hub:** Open `index.html` to navigate between all available tools.
 3.  **Permissions:** For the best experience with **SkyCast**, please allow "Location Access" when prompted by your browser.
 
+## 🛠️ Technical Toolkit
+*  **Persistence:** LocalStorage API for offline-ready data.
+*  **Design:** Glassmorphism, Responsive UI, Dark Mode Optimization.
+*  **Languages:** HTML5, CSS3 (Modern Flex/Grid), JavaScript (ES6+)
+
 ---
-**Maintained by [Ghod-Zilla12](https://github.com/Ghod-Zilla12)**
+
+## 🔗 Connect With Me
+* **Portfolio:** [Launch Zilla-Hub](https://ghod-zilla12.github.io/my-first-site/)
+* **YouTube:** [Watch My Demos](http://www.youtube.com/@Ghod_Zilla)
+
+> "Building the web, one pixel and one coordinate at a time."
