@@ -58,10 +58,8 @@ li { animation: fadeIn 0.4s ease; }
     to { opacity: 1; transform: translateY(0); }
         }
 #contact {
-    margin: 40px auto;
-    width: 90%;
-    max-width: 500px;
     text-align: center;
+    padding-bottom: 30px;
 }
 
 #contact h2 { color: var(--neon-blue); margin-bottom: 10px; }
@@ -82,8 +80,11 @@ li { animation: fadeIn 0.4s ease; }
 #contact textarea { resize: none; }
 
 #contact .launch-btn {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    font-size: 1.1rem;
+    width: auto; /* Stop it from stretching 100% */
+    min-width: 200px;
+    padding: 12px 30px; /* Slimmer top/bottom, wider sides */
+    margin: 20px auto;
+    display: inline-block;
+    font-size: 0.95rem;
+    border-radius: 50px; /* "Pill" shape looks more modern for contact */
                          }
