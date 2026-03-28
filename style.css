@@ -88,3 +88,34 @@ li { animation: fadeIn 0.4s ease; }
     font-size: 0.95rem;
     border-radius: 50px; /* "Pill" shape looks more modern for contact */
                          }
+.app-card, .glass-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes the button to the bottom */
+    height: 100%; /* Makes them fill the available space */
+    min-height: 250px; /* Adjust this number until they look right to you */
+    box-sizing: border-box;
+}
+
+.launch-btn {
+    background-color: #00d4ff; /* Zilla Blue */
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 100%; /* Makes it fill the card width */
+    max-width: 180px; /* Prevents it from getting too wide on tablets */
+    display: block;
+    margin: 10px auto 0 auto; /* Centers it and adds top spacing */
+    text-decoration: none; /* For the <a> tag version */
+    text-align: center;
+}
+
+.launch-btn:hover {
+    transform: scale(1.05); /* Modern "pop" effect */
+    background-color: #00b8e6;
+    }
